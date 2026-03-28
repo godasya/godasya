@@ -68,6 +68,7 @@
                     </div>
                     <div class="hidden md:flex space-x-6 lg:space-x-8">
                         <a href="#shop" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Shop Ghee</a>
+                        <a href="#subscribe" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Subscribe</a>
                         <a href="#benefits" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Benefits</a>
                     </div>
                 </div>
@@ -146,11 +147,149 @@
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-brandDark mb-2">A2 Bilona Cow Ghee</h3>
                     <p class="text-sm mb-6 flex-grow opacity-80">Made using the traditional Bilona method. Packed with pure A2 protein for maximum health benefits and digestion.</p>
-                    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20order%20the%20A2%20Bilona%20Cow%20Ghee%20(%E2%82%B91,450)." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm">Order Now - ₹1,550</a>
+                    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20order%20the%20A2%20Bilona%20Cow%20Ghee%20(%E2%82%B91,550)." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm">Order Now - ₹1,550</a>
                 </div>
             </div>
         </div>
     </section>
+
+    
+    <!-- ═══════════════════════════════════════════════════════════
+         PREPAID MONTHLY SUBSCRIPTIONS
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="subscribe" class="py-20 bg-brandWarm border-t border-brandBorder/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section header -->
+            <div class="text-center mb-14">
+                <p class="uppercase tracking-[0.22em] text-xs font-bold text-brandRed mb-3">Subscribe &amp; Save</p>
+                <h2 class="text-4xl font-serif font-bold text-brandDark mb-4">Prepaid Monthly Subscriptions</h2>
+                <p class="text-lg max-w-2xl mx-auto opacity-80 leading-relaxed">
+                    Lock in your monthly supply at a special prepaid rate. The longer you commit, the more you save.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-3 mt-7">
+                    <span class="inline-flex items-center gap-2 bg-white border border-brandBorder text-brandDark text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brandRed flex-shrink-0"></span>3 Months &mdash; 5% Off
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-brandRed text-brandCream text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brandCream flex-shrink-0"></span>6 Months &mdash; 6% Off&bull; Most popular
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-brandBorder text-brandDark text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brandRed flex-shrink-0"></span>9 Months &mdash; 7% Off
+                    </span>
+                </div>
+            </div>
+
+            <!-- Product subscription cards grid -->
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <!-- ─── Card 1: Pure Cow Ghee ─── -->
+                <div class="bg-white rounded-2xl shadow-md border border-brandBorder flex flex-col overflow-hidden">
+                    <div class="relative h-56 bg-brandBorder overflow-hidden flex-shrink-0 group">
+                        <img src="2.png" alt="Godasya Pure Cow Ghee monthly subscription"
+                             loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brandWarm text-brandDark text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">Best for Daily Cooking</span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-5 text-center">
+                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1">Pure Cow Ghee</h3>
+                            <p class="text-sm opacity-60">&#8377;850 / jar &bull; 1 jar delivered each month</p>
+                        </div>
+
+                        <!-- Duration tabs -->
+                        <div class="flex gap-2 mb-5" role="group" aria-label="Select plan duration for Pure Cow Ghee">
+                            <button onclick="selectPlan('pcg',3)" id="pcg-tab-3"
+                                class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
+                                aria-pressed="false">3 Months</button>
+                            <button onclick="selectPlan('pcg',6)" id="pcg-tab-6"
+                                class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
+                                aria-pressed="false">
+                                6 Months
+                            </button>
+                            <button onclick="selectPlan('pcg',9)" id="pcg-tab-9"
+                                class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
+                                aria-pressed="false">9 Months</button>
+                        </div>
+
+                        <!-- Live pricing box -->
+                        <div class="bg-brandCream border border-brandBorder rounded-xl px-5 py-5 mb-5 text-center">
+                            <div class="flex items-center justify-center gap-3 mb-2">
+                                <span id="pcg-original" class="text-sm line-through opacity-45 font-semibold tabular-nums">&#8377;2,550</span>
+                                <span id="pcg-badge" class="bg-brandRed/10 text-brandRed text-[11px] font-bold px-3 py-1 rounded-full tabular-nums">Save &#8377;128</span>
+                            </div>
+                            <div id="pcg-discounted" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none mb-2">&#8377;2,422</div>
+                            <p id="pcg-subdesc" class="text-xs opacity-55 tabular-nums">Prepaid &bull; 3 months &bull; &#8377;807/month effective</p>
+                        </div>
+
+                        <a id="pcg-cta"
+                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20subscribe%20to%20Pure%20Cow%20Ghee%20%E2%80%94%203-Month%20Prepaid%20Plan%20(%E2%82%B92%2C422%20total).%20Please%20confirm%20my%20subscription!"
+                           target="_blank" rel="noopener noreferrer"
+                           class="mt-auto w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 active:scale-[.98] transition-all duration-150 shadow-sm text-sm">
+                            Subscribe &mdash; &#8377;2,422
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ─── Card 2: A2 Bilona Cow Ghee ─── -->
+                <div class="bg-white rounded-2xl shadow-md border border-brandBorder flex flex-col overflow-hidden">
+                    <div class="relative h-56 bg-brandBorder overflow-hidden flex-shrink-0 group">
+                        <img src="3.png" alt="Godasya A2 Bilona Cow Ghee monthly subscription"
+                             loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brandDark text-brandCream text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">Premium Gir Cow</span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="mb-5 text-center">
+                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1">A2 Bilona Cow Ghee</h3>
+                            <p class="text-sm opacity-60">&#8377;1,550 / jar &bull; 1 jar delivered each month</p>
+                        </div>
+
+                        <!-- Duration tabs -->
+                        <div class="flex gap-2 mb-5" role="group" aria-label="Select plan duration for A2 Bilona Cow Ghee">
+                            <button onclick="selectPlan('a2b',3)" id="a2b-tab-3"
+                                class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
+                                aria-pressed="false">3 Months</button>
+                            <button onclick="selectPlan('a2b',6)" id="a2b-tab-6"
+                                class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
+                                aria-pressed="false">
+                                6 Months
+                            </button>
+                            <button onclick="selectPlan('a2b',9)" id="a2b-tab-9"
+                                class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
+                                aria-pressed="false">9 Months</button>
+                        </div>
+
+                        <!-- Live pricing box -->
+                        <div class="bg-brandCream border border-brandBorder rounded-xl px-5 py-5 mb-5 text-center">
+                            <div class="flex items-center justify-center gap-3 mb-2">
+                                <span id="a2b-original" class="text-sm line-through opacity-45 font-semibold tabular-nums">&#8377;4,650</span>
+                                <span id="a2b-badge" class="bg-brandRed/10 text-brandRed text-[11px] font-bold px-3 py-1 rounded-full tabular-nums">Save &#8377;232</span>
+                            </div>
+                            <div id="a2b-discounted" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none mb-2">&#8377;4,418</div>
+                            <p id="a2b-subdesc" class="text-xs opacity-55 tabular-nums">Prepaid &bull; 3 months &bull; &#8377;1,473/month effective</p>
+                        </div>
+
+                        <a id="a2b-cta"
+                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20subscribe%20to%20A2%20Bilona%20Cow%20Ghee%20%E2%80%94%203-Month%20Prepaid%20Plan%20(%E2%82%B94%2C418%20total).%20Please%20confirm%20my%20subscription!"
+                           target="_blank" rel="noopener noreferrer"
+                           class="mt-auto w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 active:scale-[.98] transition-all duration-150 shadow-sm text-sm">
+                            Subscribe &mdash; &#8377;4,418
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- /product grid -->
+
+            <p class="text-center text-xs opacity-45 mt-8 max-w-xl mx-auto leading-relaxed">
+                All subscriptions are prepaid. One jar dispatched each month for the chosen duration. Contact us on WhatsApp before the next dispatch to modify or cancel. Please note in case of cancellation midway during subscription period, all the discounts will be reverted and deducted from final refund amount.
+            </p>
+
+        </div>
+    </section>
+    <!-- ═══════════════════════════════════════════════════════════
+         END PREPAID MONTHLY SUBSCRIPTIONS
+         ═══════════════════════════════════════════════════════════ -->
 
     <section id="benefits" class="py-20 bg-brandWarm border-t border-brandBorder/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -229,7 +368,7 @@
                         <ul class="space-y-3">
                             <li><a href="#shop" class="text-[#bbbbbb] hover:text-brandRed transition">Pure Cow Ghee</a></li>
                             <li><a href="#shop" class="text-[#bbbbbb] hover:text-brandRed transition">A2 Bilona Ghee</a></li>
-                            <li><a href="#shop" class="text-[#bbbbbb] hover:text-brandRed transition">Monthly Subscription</a></li>
+                            <li><a href="#subscribe" class="text-[#bbbbbb] hover:text-brandRed transition">Monthly Subscription</a></li>
                         </ul>
                     </div>
                     <div>
@@ -265,6 +404,73 @@
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
         </svg>
     </a>
+
+
+    <script>
+        // ── Subscription plan data ──────────────────────────────────────────
+        const SUB_PLANS = {
+            pcg: {
+                name: 'Pure Cow Ghee',
+                plans: {
+                    3: { original: 2550, discounted: 2422, savings: 128, monthly: 807  },
+                    6: { original: 5100, discounted: 4794, savings: 306, monthly: 799  },
+                    9: { original: 7650, discounted: 7114, savings: 536, monthly: 790  }
+                }
+            },
+            a2b: {
+                name: 'A2 Bilona Cow Ghee',
+                plans: {
+                    3: { original:  4650, discounted:  4418, savings: 232, monthly: 1473 },
+                    6: { original:  9300, discounted:  8742, savings: 558, monthly: 1457 },
+                    9: { original: 13950, discounted: 12974, savings: 976, monthly: 1442 }
+                }
+            }
+        };
+
+        function fmtINR(n) {
+            return '\u20B9' + n.toLocaleString('en-IN');
+        }
+
+        function selectPlan(product, months) {
+            const plan  = SUB_PLANS[product].plans[months];
+            const pname = SUB_PLANS[product].name;
+
+            // Reset all tabs for this product
+            document.querySelectorAll('.sub-tab-' + product).forEach(function(btn) {
+                btn.style.background  = '';
+                btn.style.borderColor = '';
+                btn.style.color       = '';
+                btn.setAttribute('aria-pressed', 'false');
+            });
+
+            // Highlight active tab using brandRed (#db1e14) and brandCream (#fff5db)
+            var activeBtn = document.getElementById(product + '-tab-' + months);
+            activeBtn.style.background  = '#db1e14';
+            activeBtn.style.borderColor = '#db1e14';
+            activeBtn.style.color       = '#fff5db';
+            activeBtn.setAttribute('aria-pressed', 'true');
+
+            // Update pricing display
+            document.getElementById(product + '-original').innerHTML   = '<s>' + fmtINR(plan.original) + '</s>';
+            document.getElementById(product + '-badge').textContent     = 'Save ' + fmtINR(plan.savings);
+            document.getElementById(product + '-discounted').textContent = fmtINR(plan.discounted);
+            document.getElementById(product + '-subdesc').textContent   =
+                'Prepaid \u2022 ' + months + ' months \u2022 ' + fmtINR(plan.monthly) + '/month effective';
+
+            // Build WhatsApp message & update CTA
+            var msg = 'Hi Godasya! I would like to subscribe to ' + pname + ' \u2014 ' +
+                       months + '-Month Prepaid Plan (' + fmtINR(plan.discounted) + ' total). Please confirm my subscription!';
+            var cta = document.getElementById(product + '-cta');
+            cta.href        = 'https://wa.me/919699920611?text=' + encodeURIComponent(msg);
+            cta.textContent = 'Subscribe \u2014 ' + fmtINR(plan.discounted);
+        }
+
+        // Initialise both cards with 3-month plan selected
+        document.addEventListener('DOMContentLoaded', function () {
+            selectPlan('pcg', 3);
+            selectPlan('a2b', 3);
+        });
+    </script>
 
 </body>
 </html>
