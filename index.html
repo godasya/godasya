@@ -106,10 +106,11 @@
             <div class="flex justify-between items-center h-20">
 
                 <div class="flex-1 flex items-center justify-start">
-                    <div class="md:hidden flex items-center mr-4">
-                        <svg class="w-6 h-6 text-brandDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    </div>
-                    <div class="hidden md:flex space-x-5 lg:space-x-7">
+                    <button id="mobile-menu-btn" class="md:hidden flex items-center mr-4 p-2 rounded-lg hover:bg-brandBorder transition" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg id="menu-icon-open" class="w-6 h-6 text-brandDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        <svg id="menu-icon-close" class="w-6 h-6 text-brandDark hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                    <div class="hidden md:flex space-x-6 lg:space-x-8">
                         <a href="#shop" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Shop Ghee</a>
                         <a href="#subscribe" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Subscribe</a>
                         <a href="#bulk-order" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Bulk Order</a>
@@ -122,13 +123,21 @@
 
                 <div class="flex-1 flex items-center justify-end space-x-4 lg:space-x-6">
 					<a href="#benefits" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Benefits</a>
-                    <a href="#story" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Our Farm</a>
                 </div>
 
             </div>
         </div>
+		<!-- Mobile Menu — must be inside <nav> so it stays fixed to top when scrolling -->
+		<div id="mobile-menu" class="md:hidden overflow-hidden transition-all duration-300 ease-in-out" style="max-height:0;">
+			<div class="border-t border-brandBorder bg-brandCream px-4 py-2">
+				<a href="#shop"       class="mobile-nav-link block py-3 text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition border-b border-brandBorder/50">Shop Ghee</a>
+				<a href="#subscribe"  class="mobile-nav-link block py-3 text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition border-b border-brandBorder/50">Subscribe</a>
+				<a href="#bulk-order" class="mobile-nav-link block py-3 text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition border-b border-brandBorder/50">Bulk Order</a>
+				<a href="#benefits"   class="mobile-nav-link block py-3 text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition border-b border-brandBorder/50">Benefits</a>
+				<a href="#story"      class="mobile-nav-link block py-3 text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Our Farm</a>
+			</div>
+		</div>
     </nav>
-
     <!-- Hero -->
     <section class="bg-brandWarm py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
@@ -710,6 +719,48 @@
             renderBulkCard('pcg');
             renderBulkCard('a2b');
         });
+        // ── Mobile menu toggle ──────────────────────────────────────────────
+        (function () {
+            var btn   = document.getElementById('mobile-menu-btn');
+            var menu  = document.getElementById('mobile-menu');
+            var iconO = document.getElementById('menu-icon-open');
+            var iconC = document.getElementById('menu-icon-close');
+            var open  = false;
+
+            function openMenu() {
+                open = true;
+                menu.style.maxHeight = menu.scrollHeight + 'px';
+                iconO.classList.add('hidden');
+                iconC.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeMenu() {
+                open = false;
+                menu.style.maxHeight = '0';
+                iconO.classList.remove('hidden');
+                iconC.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+
+            btn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                open ? closeMenu() : openMenu();
+            });
+
+            // Close when a nav link is tapped
+            document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Close when tapping outside the nav
+            document.addEventListener('click', function (e) {
+                if (open && !btn.closest('nav').contains(e.target)) {
+                    closeMenu();
+                }
+            });
+        })();
+        // ────────────────────────────────────────────────────────────────────
     </script>
 
 </body>
