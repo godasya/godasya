@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="GODASYA: Pure cow ghee and A2 Bilona cow ghee sourced directly from our family farms. No added preservatives, small-batch traditional Desi ghee rich in A2 protein.">
-    <meta name="keywords" content="Cow ghee, Pure ghee, Desi ghee, Gir, A2 protein, A2 cow ghee, Homemade ghee, family farms products">
+    <meta name="keywords" content="Cow ghee, Pure ghee, Desi ghee, Gir, A2 protein, A2 cow ghee, Homemade ghee, Unadulterated ghee,family farms products">
     <title>GODASYA | Pure A2 Cow Ghee from Our Family Farm</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,57 +36,100 @@
 
     <style>
         html { scroll-behavior: smooth; }
-        .marquee-container {
-            overflow: hidden;
-            white-space: nowrap;
+        .marquee-container { overflow: hidden; white-space: nowrap; position: relative; width: 100%; }
+        .marquee-content { display: inline-block; animation: marquee 20s linear infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Quantity pill shared style */
+        .qty-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            border: 1px solid #e5e5e5;
+            background: #f5e3bc;
+            color: #221e1e;
+            opacity: 0.85;
+        }
+        .qty-pill svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+        /* Bulk counter button */
+        .counter-btn {
+            width: 40px; height: 40px;
+            border-radius: 9999px;
+            border: 2px solid #e5e5e5;
+            background: #fff5db;
+            color: #221e1e;
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            transition: border-color 180ms, color 180ms, opacity 180ms, background 180ms;
+            line-height: 1;
+            user-select: none;
+        }
+        .counter-btn:hover:not(:disabled) { border-color: #db1e14; color: #db1e14; }
+        .counter-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+        .counter-btn:active:not(:disabled) { background: #f5e3bc; transform: scale(0.95); }
+
+        /* Bulk range slider track */
+        .bulk-range-track {
+            height: 4px;
+            background: #e5e5e5;
+            border-radius: 9999px;
             position: relative;
-            width: 100%;
+            margin-top: 10px;
         }
-        .marquee-content {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-        }
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .bulk-range-fill {
+            height: 100%;
+            background: #db1e14;
+            border-radius: 9999px;
+            transition: width 200ms ease;
         }
     </style>
 </head>
 <body class="font-sans text-brandDark bg-brandCream antialiased selection:bg-brandRed selection:text-brandCream relative">
 
+    <!-- Top Bar -->
     <div class="bg-brandDark text-brandCream text-center py-2.5 text-xs sm:text-sm tracking-wide font-medium">
-        Pure Nourishment from Our Family Farm | Free Shipping on 2+ Jars
+        Pure Nourishment from Our Family Farm | Authentic desi Ghee
     </div>
 
+    <!-- Navigation -->
     <nav class="sticky top-0 z-40 bg-brandCream/95 backdrop-blur border-b border-brandBorder shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                
+
                 <div class="flex-1 flex items-center justify-start">
                     <div class="md:hidden flex items-center mr-4">
                         <svg class="w-6 h-6 text-brandDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </div>
-                    <div class="hidden md:flex space-x-6 lg:space-x-8">
+                    <div class="hidden md:flex space-x-5 lg:space-x-7">
                         <a href="#shop" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Shop Ghee</a>
                         <a href="#subscribe" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Subscribe</a>
-                        <a href="#benefits" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Benefits</a>
+                        <a href="#bulk-order" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Bulk Order</a>
                     </div>
                 </div>
 
                 <div class="flex-1 flex items-center justify-center">
-                    <a href="#" class="font-serif font-bold text-3xl tracking-tight text-brandDark uppercase">
-                        Godasya
-                    </a>
+                    <a href="#" class="font-serif font-bold text-3xl tracking-tight text-brandDark uppercase">Godasya</a>
                 </div>
 
                 <div class="flex-1 flex items-center justify-end space-x-4 lg:space-x-6">
-					<a href="#story" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Our Farm</a>
+					<a href="#benefits" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Benefits</a>
+                    <a href="#story" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Our Farm</a>
                 </div>
 
             </div>
         </div>
     </nav>
 
+    <!-- Hero -->
     <section class="bg-brandWarm py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
             <div class="pr-0 md:pr-8">
@@ -107,14 +150,15 @@
         </div>
     </section>
 
+    <!-- Marquee -->
     <div class="bg-brandDark text-brandCream py-4 marquee-container border-y-[3px] border-brandRed">
         <div class="marquee-content text-sm md:text-base uppercase tracking-widest font-semibold space-x-12">
-            <span>100% Homemade Ghee &bull;</span>
+            <span>100% unadulterated Ghee &bull;</span>
             <span>Rich in A2 Protein &bull;</span>
             <span>No Preservatives &bull;</span>
             <span>Family Farms Products &bull;</span>
             <span>Authentic Desi Ghee &bull;</span>
-            <span>100% Homemade Ghee &bull;</span>
+            <span>100% unadulterated Ghee &bull;</span>
             <span>Rich in A2 Protein &bull;</span>
             <span>No Preservatives &bull;</span>
             <span>Family Farms Products &bull;</span>
@@ -122,6 +166,9 @@
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         SHOP SECTION
+         ═══════════════════════════════════════════════════════════ -->
     <section id="shop" class="py-20 bg-brandCream">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -130,37 +177,48 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
+
+                <!-- Pure Cow Ghee -->
                 <div class="bg-white p-6 rounded-2xl shadow-md border border-brandBorder flex flex-col items-center text-center group">
                     <span class="bg-brandWarm text-brandDark text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full mb-4 inline-block">Best for Daily Cooking</span>
                     <div class="w-full h-64 bg-brandBorder rounded-xl mb-6 overflow-hidden flex items-center justify-center">
                         <img src="2.png" alt="Godasya Pure Cow Ghee" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-brandDark mb-2">Pure Cow Ghee</h3>
-                    <p class="text-sm mb-6 flex-grow opacity-80">A kitchen staple. Nutrient-dense, rich homemade ghee perfect for growing kids and everyday nourishment.</p>
-                    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20order%20the%20Pure%20Cow%20Ghee%20(%E2%82%B9850)." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm">Order Now - ₹850</a>
+                    <!-- Quantity pill -->
+                    <span class="qty-pill mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 8h14l-1.5 9a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 8z"/><path d="M8 8V6a2 2 0 014 0v2"/></svg>
+                        1 Litre per Jar
+                    </span>
+                    <p class="text-sm mb-6 flex-grow opacity-80">A kitchen staple. Nutrient-dense, rich unadulterated ghee perfect for growing kids and everyday nourishment.</p>
+                    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20order%20the%20Pure%20Cow%20Ghee%201%20Ltr%20(%E2%82%B9850)." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm">Order Now — ₹850 / 1 Ltr</a>
                 </div>
 
+                <!-- A2 Bilona Cow Ghee -->
                 <div class="bg-white p-6 rounded-2xl shadow-md border border-brandBorder flex flex-col items-center text-center group">
                     <span class="bg-brandDark text-brandCream text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full mb-4 inline-block">Premium Gir Cow</span>
                     <div class="w-full h-64 bg-brandBorder rounded-xl mb-6 overflow-hidden flex items-center justify-center">
                         <img src="3.png" alt="Godasya A2 Bilona Cow Ghee" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="text-2xl font-serif font-bold text-brandDark mb-2">A2 Bilona Cow Ghee</h3>
+                    <!-- Quantity pill -->
+                    <span class="qty-pill mb-4">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 8h14l-1.5 9a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 8z"/><path d="M8 8V6a2 2 0 014 0v2"/></svg>
+                        1 Kg per Jar
+                    </span>
                     <p class="text-sm mb-6 flex-grow opacity-80">Made using the traditional Bilona method. Packed with pure A2 protein for maximum health benefits and digestion.</p>
-                    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20order%20the%20A2%20Bilona%20Cow%20Ghee%20(%E2%82%B91,550)." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm">Order Now - ₹1,550</a>
+                    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20order%20the%20A2%20Bilona%20Cow%20Ghee%201%20Kg%20(%E2%82%B91%2C550)." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm">Order Now — ₹1,550 / 1 Kg</a>
                 </div>
             </div>
         </div>
     </section>
 
-    
     <!-- ═══════════════════════════════════════════════════════════
          PREPAID MONTHLY SUBSCRIPTIONS
          ═══════════════════════════════════════════════════════════ -->
     <section id="subscribe" class="py-20 bg-brandWarm border-t border-brandBorder/50">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <!-- Section header -->
             <div class="text-center mb-14">
                 <p class="uppercase tracking-[0.22em] text-xs font-bold text-brandRed mb-3">Subscribe &amp; Save</p>
                 <h2 class="text-4xl font-serif font-bold text-brandDark mb-4">Prepaid Monthly Subscriptions</h2>
@@ -172,7 +230,7 @@
                         <span class="w-2 h-2 rounded-full bg-brandRed flex-shrink-0"></span>3 Months &mdash; 5% Off
                     </span>
                     <span class="inline-flex items-center gap-2 bg-brandRed text-brandCream text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-brandCream flex-shrink-0"></span>6 Months &mdash; 6% Off&bull; Most popular
+                        <span class="w-2 h-2 rounded-full bg-brandCream flex-shrink-0"></span>6 Months &mdash; 6% Off &bull; Most Popular
                     </span>
                     <span class="inline-flex items-center gap-2 bg-white border border-brandBorder text-brandDark text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-sm">
                         <span class="w-2 h-2 rounded-full bg-brandRed flex-shrink-0"></span>9 Months &mdash; 7% Off
@@ -180,39 +238,28 @@
                 </div>
             </div>
 
-            <!-- Product subscription cards grid -->
             <div class="grid md:grid-cols-2 gap-10">
 
                 <!-- ─── Card 1: Pure Cow Ghee ─── -->
                 <div class="bg-white rounded-2xl shadow-md border border-brandBorder flex flex-col overflow-hidden">
                     <div class="relative h-56 bg-brandBorder overflow-hidden flex-shrink-0 group">
-                        <img src="2.png" alt="Godasya Pure Cow Ghee monthly subscription"
-                             loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <img src="2.png" alt="Godasya Pure Cow Ghee monthly subscription" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-3 left-3 bg-brandWarm text-brandDark text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">Best for Daily Cooking</span>
                     </div>
-
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="mb-5 text-center">
-                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1">Pure Cow Ghee</h3>
-                            <p class="text-sm opacity-60">&#8377;850 / jar &bull; 1 jar delivered each month</p>
+                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1.5">Pure Cow Ghee</h3>
+                            <span class="qty-pill">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 8h14l-1.5 9a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 8z"/><path d="M8 8V6a2 2 0 014 0v2"/></svg>
+                                1 Litre per Jar
+                            </span>
+                            <p class="text-sm opacity-60 mt-2">&#8377;850 / jar &bull; 1 jar delivered each month</p>
                         </div>
-
-                        <!-- Duration tabs -->
                         <div class="flex gap-2 mb-5" role="group" aria-label="Select plan duration for Pure Cow Ghee">
-                            <button onclick="selectPlan('pcg',3)" id="pcg-tab-3"
-                                class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
-                                aria-pressed="false">3 Months</button>
-                            <button onclick="selectPlan('pcg',6)" id="pcg-tab-6"
-                                class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
-                                aria-pressed="false">
-                                6 Months
-                            </button>
-                            <button onclick="selectPlan('pcg',9)" id="pcg-tab-9"
-                                class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
-                                aria-pressed="false">9 Months</button>
+                            <button onclick="selectPlan('pcg',3)" id="pcg-tab-3" class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60" aria-pressed="false">3 Months</button>
+                            <button onclick="selectPlan('pcg',6)" id="pcg-tab-6" class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60" aria-pressed="false">6 Months</button>
+                            <button onclick="selectPlan('pcg',9)" id="pcg-tab-9" class="sub-tab-pcg flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60" aria-pressed="false">9 Months</button>
                         </div>
-
-                        <!-- Live pricing box -->
                         <div class="bg-brandCream border border-brandBorder rounded-xl px-5 py-5 mb-5 text-center">
                             <div class="flex items-center justify-center gap-3 mb-2">
                                 <span id="pcg-original" class="text-sm line-through opacity-45 font-semibold tabular-nums">&#8377;2,550</span>
@@ -221,9 +268,8 @@
                             <div id="pcg-discounted" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none mb-2">&#8377;2,422</div>
                             <p id="pcg-subdesc" class="text-xs opacity-55 tabular-nums">Prepaid &bull; 3 months &bull; &#8377;807/month effective</p>
                         </div>
-
                         <a id="pcg-cta"
-                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20subscribe%20to%20Pure%20Cow%20Ghee%20%E2%80%94%203-Month%20Prepaid%20Plan%20(%E2%82%B92%2C422%20total).%20Please%20confirm%20my%20subscription!"
+                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20subscribe%20to%20Pure%20Cow%20Ghee%20(1%20Ltr%20per%20jar)%20%E2%80%94%203-Month%20Prepaid%20Plan%20(%E2%82%B92%2C422%20total).%20Please%20confirm%20my%20subscription!"
                            target="_blank" rel="noopener noreferrer"
                            class="mt-auto w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 active:scale-[.98] transition-all duration-150 shadow-sm text-sm">
                             Subscribe &mdash; &#8377;2,422
@@ -234,33 +280,23 @@
                 <!-- ─── Card 2: A2 Bilona Cow Ghee ─── -->
                 <div class="bg-white rounded-2xl shadow-md border border-brandBorder flex flex-col overflow-hidden">
                     <div class="relative h-56 bg-brandBorder overflow-hidden flex-shrink-0 group">
-                        <img src="3.png" alt="Godasya A2 Bilona Cow Ghee monthly subscription"
-                             loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <img src="3.png" alt="Godasya A2 Bilona Cow Ghee monthly subscription" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
                         <span class="absolute top-3 left-3 bg-brandDark text-brandCream text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">Premium Gir Cow</span>
                     </div>
-
                     <div class="p-6 flex flex-col flex-grow">
                         <div class="mb-5 text-center">
-                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1">A2 Bilona Cow Ghee</h3>
-                            <p class="text-sm opacity-60">&#8377;1,550 / jar &bull; 1 jar delivered each month</p>
+                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1.5">A2 Bilona Cow Ghee</h3>
+                            <span class="qty-pill">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 8h14l-1.5 9a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 8z"/><path d="M8 8V6a2 2 0 014 0v2"/></svg>
+                                1 Kg per Jar
+                            </span>
+                            <p class="text-sm opacity-60 mt-2">&#8377;1,550 / jar &bull; 1 jar delivered each month</p>
                         </div>
-
-                        <!-- Duration tabs -->
                         <div class="flex gap-2 mb-5" role="group" aria-label="Select plan duration for A2 Bilona Cow Ghee">
-                            <button onclick="selectPlan('a2b',3)" id="a2b-tab-3"
-                                class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
-                                aria-pressed="false">3 Months</button>
-                            <button onclick="selectPlan('a2b',6)" id="a2b-tab-6"
-                                class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
-                                aria-pressed="false">
-                                6 Months
-                            </button>
-                            <button onclick="selectPlan('a2b',9)" id="a2b-tab-9"
-                                class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60"
-                                aria-pressed="false">9 Months</button>
+                            <button onclick="selectPlan('a2b',3)" id="a2b-tab-3" class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60" aria-pressed="false">3 Months</button>
+                            <button onclick="selectPlan('a2b',6)" id="a2b-tab-6" class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60" aria-pressed="false">6 Months</button>
+                            <button onclick="selectPlan('a2b',9)" id="a2b-tab-9" class="sub-tab-a2b flex-1 relative py-2.5 text-sm font-bold rounded-xl border-2 border-brandBorder text-brandDark bg-transparent transition-all duration-200 hover:border-brandRed/60" aria-pressed="false">9 Months</button>
                         </div>
-
-                        <!-- Live pricing box -->
                         <div class="bg-brandCream border border-brandBorder rounded-xl px-5 py-5 mb-5 text-center">
                             <div class="flex items-center justify-center gap-3 mb-2">
                                 <span id="a2b-original" class="text-sm line-through opacity-45 font-semibold tabular-nums">&#8377;4,650</span>
@@ -269,9 +305,8 @@
                             <div id="a2b-discounted" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none mb-2">&#8377;4,418</div>
                             <p id="a2b-subdesc" class="text-xs opacity-55 tabular-nums">Prepaid &bull; 3 months &bull; &#8377;1,473/month effective</p>
                         </div>
-
                         <a id="a2b-cta"
-                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20subscribe%20to%20A2%20Bilona%20Cow%20Ghee%20%E2%80%94%203-Month%20Prepaid%20Plan%20(%E2%82%B94%2C418%20total).%20Please%20confirm%20my%20subscription!"
+                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20subscribe%20to%20A2%20Bilona%20Cow%20Ghee%20(1%20Kg%20per%20jar)%20%E2%80%94%203-Month%20Prepaid%20Plan%20(%E2%82%B94%2C418%20total).%20Please%20confirm%20my%20subscription!"
                            target="_blank" rel="noopener noreferrer"
                            class="mt-auto w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 active:scale-[.98] transition-all duration-150 shadow-sm text-sm">
                             Subscribe &mdash; &#8377;4,418
@@ -279,7 +314,7 @@
                     </div>
                 </div>
 
-            </div><!-- /product grid -->
+            </div>
 
             <p class="text-center text-xs opacity-45 mt-8 max-w-xl mx-auto leading-relaxed">
                 All subscriptions are prepaid. One jar dispatched each month for the chosen duration. Contact us on WhatsApp before the next dispatch to modify or cancel. Please note in case of cancellation midway during subscription period, all the discounts will be reverted and deducted from final refund amount.
@@ -287,17 +322,166 @@
 
         </div>
     </section>
-    <!-- ═══════════════════════════════════════════════════════════
-         END PREPAID MONTHLY SUBSCRIPTIONS
-         ═══════════════════════════════════════════════════════════ -->
+    <!-- END PREPAID MONTHLY SUBSCRIPTIONS -->
 
+
+    <!-- ═══════════════════════════════════════════════════════════
+         PREPAID BULK ORDER
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="bulk-order" class="py-20 bg-brandCream border-t border-brandBorder/50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section header -->
+            <div class="text-center mb-14">
+                <p class="uppercase tracking-[0.22em] text-xs font-bold text-brandRed mb-3">Buy More, Save More</p>
+                <h2 class="text-4xl font-serif font-bold text-brandDark mb-4">Prepaid Bulk Order</h2>
+                <p class="text-lg max-w-2xl mx-auto opacity-80 leading-relaxed">
+                    Order 3 or more jars in a single prepaid order and enjoy a flat <strong class="font-bold">5% discount</strong>. Ideal for families, gifting, or simply stocking up.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-3 mt-7">
+                    <span class="inline-flex items-center gap-2 bg-brandRed text-brandCream text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brandCream flex-shrink-0"></span>Flat 5% Off — 3 to 15 Jars
+                    </span>
+                    <span class="inline-flex items-center gap-2 bg-white border border-brandBorder text-brandDark text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-brandRed flex-shrink-0"></span>Single Prepaid Order · Delivered Together
+                    </span>
+                </div>
+            </div>
+
+            <!-- Product bulk cards -->
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <!-- ─── Bulk Card 1: Pure Cow Ghee ─── -->
+                <div class="bg-white rounded-2xl shadow-md border border-brandBorder flex flex-col overflow-hidden">
+                    <div class="relative h-48 bg-brandBorder overflow-hidden flex-shrink-0 group">
+                        <img src="2.png" alt="Godasya Pure Cow Ghee bulk order" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brandWarm text-brandDark text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">Best for Daily Cooking</span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <!-- Product name + qty -->
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1.5">Pure Cow Ghee</h3>
+                            <span class="qty-pill">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 8h14l-1.5 9a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 8z"/><path d="M8 8V6a2 2 0 014 0v2"/></svg>
+                                1 Litre per Jar
+                            </span>
+                            <p class="text-xs opacity-50 mt-2 tabular-nums">&#8377;850 per jar (MRP)</p>
+                        </div>
+
+                        <!-- Jar counter -->
+                        <div class="mb-6">
+                            <p class="text-[10px] font-bold uppercase tracking-widest opacity-50 text-center mb-3">Select Number of Jars</p>
+                            <div class="flex items-center justify-center gap-5">
+                                <button id="pcg-bulk-minus" class="counter-btn" onclick="adjustBulk('pcg', -1)" aria-label="Decrease jar count" disabled>&#8722;</button>
+                                <div class="text-center min-w-[3rem]">
+                                    <span id="pcg-bulk-count" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none">3</span>
+                                    <p class="text-[10px] uppercase tracking-wider opacity-45 mt-0.5">Jars</p>
+                                </div>
+                                <button id="pcg-bulk-plus" class="counter-btn" onclick="adjustBulk('pcg', 1)" aria-label="Increase jar count">&#43;</button>
+                            </div>
+                            <!-- Range progress bar -->
+                            <div class="bulk-range-track mt-4 mx-4">
+                                <div id="pcg-bulk-bar" class="bulk-range-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] opacity-40 font-semibold uppercase tracking-wide mt-1.5 mx-4">
+                                <span>Min 3</span><span>Max 15</span>
+                            </div>
+                        </div>
+
+                        <!-- Price breakdown box -->
+                        <div class="bg-brandCream border border-brandBorder rounded-xl px-5 py-5 mb-5 text-center">
+                            <div class="flex items-center justify-center gap-3 mb-2">
+                                <span id="pcg-bulk-original" class="text-sm line-through opacity-45 font-semibold tabular-nums">&#8377;2,550</span>
+                                <span id="pcg-bulk-badge" class="bg-brandRed/10 text-brandRed text-[11px] font-bold px-3 py-1 rounded-full tabular-nums">Save &#8377;128</span>
+                            </div>
+                            <div id="pcg-bulk-discounted" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none mb-2">&#8377;2,423</div>
+                            <p id="pcg-bulk-subdesc" class="text-xs opacity-55 tabular-nums">3 Jars &times; &#8377;850 &bull; 5% bulk discount</p>
+                        </div>
+
+                        <a id="pcg-bulk-cta"
+                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20place%20a%20Bulk%20Order%20for%203%20jars%20of%20Pure%20Cow%20Ghee%20(1%20Ltr%20each).%20Total%20after%205%25%20bulk%20discount%3A%20%E2%82%B92%2C423.%20Please%20confirm%20my%20order!"
+                           target="_blank" rel="noopener noreferrer"
+                           class="mt-auto w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 active:scale-[.98] transition-all duration-150 shadow-sm text-sm">
+                            Order 3 Jars &mdash; &#8377;2,423
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ─── Bulk Card 2: A2 Bilona Cow Ghee ─── -->
+                <div class="bg-white rounded-2xl shadow-md border border-brandBorder flex flex-col overflow-hidden">
+                    <div class="relative h-48 bg-brandBorder overflow-hidden flex-shrink-0 group">
+                        <img src="3.png" alt="Godasya A2 Bilona Cow Ghee bulk order" loading="lazy" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-brandDark text-brandCream text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">Premium Gir Cow</span>
+                    </div>
+
+                    <div class="p-6 flex flex-col flex-grow">
+                        <!-- Product name + qty -->
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-serif font-bold text-brandDark mb-1.5">A2 Bilona Cow Ghee</h3>
+                            <span class="qty-pill">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 8h14l-1.5 9a2 2 0 01-2 1.5H8.5a2 2 0 01-2-1.5L5 8z"/><path d="M8 8V6a2 2 0 014 0v2"/></svg>
+                                1 Kg per Jar
+                            </span>
+                            <p class="text-xs opacity-50 mt-2 tabular-nums">&#8377;1,550 per jar (MRP)</p>
+                        </div>
+
+                        <!-- Jar counter -->
+                        <div class="mb-6">
+                            <p class="text-[10px] font-bold uppercase tracking-widest opacity-50 text-center mb-3">Select Number of Jars</p>
+                            <div class="flex items-center justify-center gap-5">
+                                <button id="a2b-bulk-minus" class="counter-btn" onclick="adjustBulk('a2b', -1)" aria-label="Decrease jar count" disabled>&#8722;</button>
+                                <div class="text-center min-w-[3rem]">
+                                    <span id="a2b-bulk-count" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none">3</span>
+                                    <p class="text-[10px] uppercase tracking-wider opacity-45 mt-0.5">Jars</p>
+                                </div>
+                                <button id="a2b-bulk-plus" class="counter-btn" onclick="adjustBulk('a2b', 1)" aria-label="Increase jar count">&#43;</button>
+                            </div>
+                            <div class="bulk-range-track mt-4 mx-4">
+                                <div id="a2b-bulk-bar" class="bulk-range-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="flex justify-between text-[10px] opacity-40 font-semibold uppercase tracking-wide mt-1.5 mx-4">
+                                <span>Min 3</span><span>Max 15</span>
+                            </div>
+                        </div>
+
+                        <!-- Price breakdown box -->
+                        <div class="bg-brandCream border border-brandBorder rounded-xl px-5 py-5 mb-5 text-center">
+                            <div class="flex items-center justify-center gap-3 mb-2">
+                                <span id="a2b-bulk-original" class="text-sm line-through opacity-45 font-semibold tabular-nums">&#8377;4,650</span>
+                                <span id="a2b-bulk-badge" class="bg-brandRed/10 text-brandRed text-[11px] font-bold px-3 py-1 rounded-full tabular-nums">Save &#8377;233</span>
+                            </div>
+                            <div id="a2b-bulk-discounted" class="text-4xl font-serif font-bold text-brandDark tabular-nums leading-none mb-2">&#8377;4,418</div>
+                            <p id="a2b-bulk-subdesc" class="text-xs opacity-55 tabular-nums">3 Jars &times; &#8377;1,550 &bull; 5% bulk discount</p>
+                        </div>
+
+                        <a id="a2b-bulk-cta"
+                           href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20would%20like%20to%20place%20a%20Bulk%20Order%20for%203%20jars%20of%20A2%20Bilona%20Cow%20Ghee%20(1%20Kg%20each).%20Total%20after%205%25%20bulk%20discount%3A%20%E2%82%B94%2C418.%20Please%20confirm%20my%20order!"
+                           target="_blank" rel="noopener noreferrer"
+                           class="mt-auto w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 active:scale-[.98] transition-all duration-150 shadow-sm text-sm">
+                            Order 3 Jars &mdash; &#8377;4,418
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- /bulk cards grid -->
+
+            <p class="text-center text-xs opacity-45 mt-8 max-w-xl mx-auto leading-relaxed">
+                All bulk orders are prepaid. Jars are dispatched together in a single delivery. 5% discount applies to orders of 3–15 jars placed in a single transaction. Please reach out for more than 15 jars or mix of products in single bulk order.
+            </p>
+
+        </div>
+    </section>
+    <!-- END PREPAID BULK ORDER -->
+
+
+    <!-- Benefits -->
     <section id="benefits" class="py-20 bg-brandWarm border-t border-brandBorder/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-brandDark mb-4">Nourishment for Every Stage of Life</h2>
                 <p class="text-lg max-w-2xl mx-auto opacity-80">Our pure ghee is a functional superfood designed to support diverse lifestyles.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-brandCream p-6 rounded-2xl border border-brandBorder shadow-sm text-center">
                     <div class="w-16 h-16 mx-auto bg-white border border-brandBorder rounded-full flex items-center justify-center mb-6 shadow-sm">
@@ -311,26 +495,27 @@
                         <svg class="w-8 h-8 text-brandRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-serif font-bold text-brandDark mb-3">Growing Kids</h3>
-                    <p class="text-sm leading-relaxed opacity-80">Essential fats, vitamins, and pure nutrition for healthy physical and cognitive development.</p>
+                    <p class="text-sm leading-relaxed opacity-80">Essential fats and vitamins for healthy bone development, immunity, and cognitive growth.</p>
                 </div>
                 <div class="bg-brandCream p-6 rounded-2xl border border-brandBorder shadow-sm text-center">
                     <div class="w-16 h-16 mx-auto bg-white border border-brandBorder rounded-full flex items-center justify-center mb-6 shadow-sm">
                         <svg class="w-8 h-8 text-brandRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-brandDark mb-3">Expecting Mothers</h3>
-                    <p class="text-sm leading-relaxed opacity-80">Pure, nutrient-dense <strong class="font-semibold">homemade ghee</strong> for maternal health, immunity, and postpartum recovery.</p>
+                    <h3 class="text-xl font-serif font-bold text-brandDark mb-3">New Mothers</h3>
+                    <p class="text-sm leading-relaxed opacity-80">Supports postpartum recovery, provides essential nutrients for breastfeeding mothers and newborns.</p>
                 </div>
                 <div class="bg-brandCream p-6 rounded-2xl border border-brandBorder shadow-sm text-center">
                     <div class="w-16 h-16 mx-auto bg-white border border-brandBorder rounded-full flex items-center justify-center mb-6 shadow-sm">
-                        <svg class="w-8 h-8 text-brandRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        <svg class="w-8 h-8 text-brandRed" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-serif font-bold text-brandDark mb-3">Healthy Weight Gain</h3>
-                    <p class="text-sm leading-relaxed opacity-80">Clean, highly digestible calories packed with fat-soluble vitamins to reach your health goals naturally.</p>
+                    <h3 class="text-xl font-serif font-bold text-brandDark mb-3">Active Athletes</h3>
+                    <p class="text-sm leading-relaxed opacity-80">High-energy fuel for training and recovery. Butyric acid supports gut health and rapid muscle repair.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Our Story / Farm -->
     <section id="story" class="bg-brandDark text-brandCream py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -351,17 +536,18 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-brandCream pt-16 pb-8 border-t border-brandBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-[#000000]">
             <div class="grid md:grid-cols-2 gap-12 mb-12">
                 <div>
                     <h3 class="text-2xl font-serif font-bold mb-4">5% off on your first jar</h3>
-                    <p class="mb-6 text-sm opacity-80">By joining our whatsapp group and following our instagram page, you'll receive 5% off on your first order</p>
-					<a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20want%20to%20avail%20the%20discount!%20Please%20share%20your%20instagram%20page%20and%20add%20me%20to%20the%20group." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm" aria-label="Learn About Our Process">
-						Add me to the whatsapp group
-					</a>
+                    <p class="mb-6 text-sm opacity-80">By joining our WhatsApp group and following our Instagram page, you'll receive 5% off on your first order.</p>
+                    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20want%20to%20avail%20the%20discount!%20Please%20share%20your%20instagram%20page%20and%20add%20me%20to%20the%20group." target="_blank" rel="noopener noreferrer" class="w-full block text-center bg-brandRed text-brandCream font-bold py-3.5 rounded-full uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm" aria-label="Join our WhatsApp group">
+                        Add me to the WhatsApp group
+                    </a>
                 </div>
-                
+
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-8 text-sm">
                     <div>
                         <h4 class="font-bold uppercase tracking-wider mb-4">Shop</h4>
@@ -369,6 +555,7 @@
                             <li><a href="#shop" class="text-[#bbbbbb] hover:text-brandRed transition">Pure Cow Ghee</a></li>
                             <li><a href="#shop" class="text-[#bbbbbb] hover:text-brandRed transition">A2 Bilona Ghee</a></li>
                             <li><a href="#subscribe" class="text-[#bbbbbb] hover:text-brandRed transition">Monthly Subscription</a></li>
+                            <li><a href="#bulk-order" class="text-[#bbbbbb] hover:text-brandRed transition">Bulk Order</a></li>
                         </ul>
                     </div>
                     <div>
@@ -399,7 +586,8 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20have%20a%20question%20about%20your%20pure%20ghee." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#128C7E] transition-transform transform hover:scale-110 z-50 flex items-center justify-center group" aria-label="Chat with us on WhatsApp">
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/919699920611?text=Hi%20Godasya!%20I%20have%20a%20question%20about%20your%20pure%20ghee." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:bg-[#128C7E] transition-transform transform hover:scale-110 z-50 flex items-center justify-center" aria-label="Chat with us on WhatsApp">
         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
         </svg>
@@ -407,10 +595,11 @@
 
 
     <script>
-        // ── Subscription plan data ──────────────────────────────────────────
+        // ── Monthly Subscription plan data ──────────────────────────────
         const SUB_PLANS = {
             pcg: {
                 name: 'Pure Cow Ghee',
+                unit: '1 Ltr per jar',
                 plans: {
                     3: { original: 2550, discounted: 2422, savings: 128, monthly: 807  },
                     6: { original: 5100, discounted: 4794, savings: 306, monthly: 799  },
@@ -419,6 +608,7 @@
             },
             a2b: {
                 name: 'A2 Bilona Cow Ghee',
+                unit: '1 Kg per jar',
                 plans: {
                     3: { original:  4650, discounted:  4418, savings: 232, monthly: 1473 },
                     6: { original:  9300, discounted:  8742, savings: 558, monthly: 1457 },
@@ -434,8 +624,8 @@
         function selectPlan(product, months) {
             const plan  = SUB_PLANS[product].plans[months];
             const pname = SUB_PLANS[product].name;
+            const unit  = SUB_PLANS[product].unit;
 
-            // Reset all tabs for this product
             document.querySelectorAll('.sub-tab-' + product).forEach(function(btn) {
                 btn.style.background  = '';
                 btn.style.borderColor = '';
@@ -443,32 +633,82 @@
                 btn.setAttribute('aria-pressed', 'false');
             });
 
-            // Highlight active tab using brandRed (#db1e14) and brandCream (#fff5db)
             var activeBtn = document.getElementById(product + '-tab-' + months);
             activeBtn.style.background  = '#db1e14';
             activeBtn.style.borderColor = '#db1e14';
             activeBtn.style.color       = '#fff5db';
             activeBtn.setAttribute('aria-pressed', 'true');
 
-            // Update pricing display
             document.getElementById(product + '-original').innerHTML   = '<s>' + fmtINR(plan.original) + '</s>';
             document.getElementById(product + '-badge').textContent     = 'Save ' + fmtINR(plan.savings);
             document.getElementById(product + '-discounted').textContent = fmtINR(plan.discounted);
             document.getElementById(product + '-subdesc').textContent   =
                 'Prepaid \u2022 ' + months + ' months \u2022 ' + fmtINR(plan.monthly) + '/month effective';
 
-            // Build WhatsApp message & update CTA
-            var msg = 'Hi Godasya! I would like to subscribe to ' + pname + ' \u2014 ' +
+            var msg = 'Hi Godasya! I would like to subscribe to ' + pname + ' (' + unit + ') \u2014 ' +
                        months + '-Month Prepaid Plan (' + fmtINR(plan.discounted) + ' total). Please confirm my subscription!';
             var cta = document.getElementById(product + '-cta');
             cta.href        = 'https://wa.me/919699920611?text=' + encodeURIComponent(msg);
             cta.textContent = 'Subscribe \u2014 ' + fmtINR(plan.discounted);
         }
 
-        // Initialise both cards with 3-month plan selected
+        // ── Bulk Order logic ────────────────────────────────────────────
+        const BULK_PRODUCTS = {
+            pcg: { name: 'Pure Cow Ghee',       pricePerJar: 850,  unit: '1 Ltr', count: 3 },
+            a2b: { name: 'A2 Bilona Cow Ghee',  pricePerJar: 1550, unit: '1 Kg',  count: 3 }
+        };
+        const BULK_MIN = 3, BULK_MAX = 15, BULK_DISCOUNT = 0.05;
+
+        function adjustBulk(product, delta) {
+            var p = BULK_PRODUCTS[product];
+            p.count = Math.max(BULK_MIN, Math.min(BULK_MAX, p.count + delta));
+            renderBulkCard(product);
+        }
+
+        function renderBulkCard(product) {
+            var p       = BULK_PRODUCTS[product];
+            var count   = p.count;
+            var original   = p.pricePerJar * count;
+            var discounted = Math.round(original * (1 - BULK_DISCOUNT));
+            var savings    = original - discounted;
+            var pct        = ((count - BULK_MIN) / (BULK_MAX - BULK_MIN)) * 100;
+
+            // Count display
+            document.getElementById(product + '-bulk-count').textContent = count;
+
+            // Progress bar
+            var bar = document.getElementById(product + '-bulk-bar');
+            if (bar) bar.style.width = pct + '%';
+
+            // Pricing
+            document.getElementById(product + '-bulk-original').textContent   = fmtINR(original);
+            document.getElementById(product + '-bulk-badge').textContent       = 'Save ' + fmtINR(savings);
+            document.getElementById(product + '-bulk-discounted').textContent  = fmtINR(discounted);
+            document.getElementById(product + '-bulk-subdesc').textContent     =
+                count + ' Jars \u00D7 ' + fmtINR(p.pricePerJar) + ' \u2022 5% bulk discount';
+
+            // Button states
+            var minusBtn = document.getElementById(product + '-bulk-minus');
+            var plusBtn  = document.getElementById(product + '-bulk-plus');
+            if (minusBtn) minusBtn.disabled = (count <= BULK_MIN);
+            if (plusBtn)  plusBtn.disabled  = (count >= BULK_MAX);
+
+            // WhatsApp CTA
+            var msg = 'Hi Godasya! I would like to place a Bulk Order for ' + count + ' jars of ' + p.name +
+                      ' (' + p.unit + ' each). Total after 5% bulk discount: ' + fmtINR(discounted) + '. Please confirm my order!';
+            var cta = document.getElementById(product + '-bulk-cta');
+            if (cta) {
+                cta.href = 'https://wa.me/919699920611?text=' + encodeURIComponent(msg);
+                cta.textContent = 'Order ' + count + ' Jar' + (count > 1 ? 's' : '') + ' \u2014 ' + fmtINR(discounted);
+            }
+        }
+
+        // Initialise on DOM ready
         document.addEventListener('DOMContentLoaded', function () {
             selectPlan('pcg', 3);
             selectPlan('a2b', 3);
+            renderBulkCard('pcg');
+            renderBulkCard('a2b');
         });
     </script>
 
