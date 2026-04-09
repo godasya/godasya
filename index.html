@@ -6,6 +6,28 @@
     <meta name="description" content="GODASYA: Pure cow ghee and A2 Bilona cow ghee sourced directly from our family farms. No added preservatives, small-batch traditional Desi ghee rich in A2 protein.">
     <meta name="keywords" content="Cow ghee, Pure ghee, Desi ghee, Gir, A2 protein, A2 cow ghee, Homemade ghee, Unadulterated ghee,family farms products">
     <title>GODASYA | Pure A2 Cow Ghee from Our Family Farm</title>
+    <!-- ═══════════════════════════════════════════════════
+         SEO: Canonical + Open Graph + Twitter Card
+    ════════════════════════════════════════════════════ -->
+    <link rel="canonical" href="https://godasya.in/" />
+
+    <!-- Open Graph (Facebook / WhatsApp / LinkedIn previews) -->
+    <meta property="og:type"         content="website" />
+    <meta property="og:url"          content="https://godasya.in/" />
+    <meta property="og:site_name"    content="GODASYA" />
+    <meta property="og:locale"       content="en_IN" />
+    <meta property="og:title"        content="GODASYA | Pure A2 Cow Ghee from Our Family Farm" />
+    <meta property="og:description"  content="Pure cow ghee and A2 Bilona cow ghee sourced directly from our family farms. No preservatives. Small-batch, traditional Desi ghee rich in A2 protein." />
+    <meta property="og:image"        content="https://godasya.in/og-image.jpg" />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt"    content="GODASYA Pure Cow Ghee jar on a farm background" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="GODASYA | Pure A2 Cow Ghee from Our Family Farm" />
+    <meta name="twitter:description" content="Pure cow ghee and A2 Bilona cow ghee sourced directly from our family farms. No preservatives. Traditional Desi ghee rich in A2 protein." />
+    <meta name="twitter:image"       content="https://godasya.in/og-image.jpg" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,6 +114,163 @@
             transition: width 200ms ease;
         }
     </style>
+
+    <!-- ═══════════════════════════════════════════════════
+         SEO: JSON-LD Structured Data
+         Schemas: Organization · WebSite · Product × 2 · FAQPage
+    ════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+
+        {
+          "@type": "Organization",
+          "@id": "https://godasya.in/#organization",
+          "name": "GODASYA",
+          "url": "https://godasya.in/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://godasya.in/og-image.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "description": "GODASYA produces traditional small-batch pure cow ghee and A2 Bilona cow ghee directly from family farms across India. Zero preservatives, full A2 protein.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-9699920611",
+            "contactType": "customer service",
+            "contactOption": "TollFree",
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "areaServed": "IN",
+          "sameAs": []
+        },
+
+        {
+          "@type": "WebSite",
+          "@id": "https://godasya.in/#website",
+          "url": "https://godasya.in/",
+          "name": "GODASYA",
+          "description": "Buy pure A2 cow ghee and A2 Bilona cow ghee online from GODASYA family farms.",
+          "publisher": { "@id": "https://godasya.in/#organization" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://godasya.in/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+
+        {
+          "@type": "Product",
+          "@id": "https://godasya.in/#pure-cow-ghee",
+          "name": "Pure Cow Ghee",
+          "description": "Farm-fresh pure cow ghee made from pastured cows using traditional cream method. 1 Litre jar with zero preservatives, rich in natural nutrients.",
+          "brand": { "@id": "https://godasya.in/#organization" },
+          "image": "https://godasya.in/og-image.jpg",
+          "sku": "GODASYA-PCG-1LTR",
+          "mpn": "PCG-1LTR",
+          "category": "Food & Grocery > Dairy & Eggs > Ghee",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://godasya.in/#shop",
+            "priceCurrency": "INR",
+            "price": "850",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
+            "seller": { "@id": "https://godasya.in/#organization" }
+          }
+        },
+
+        {
+          "@type": "Product",
+          "@id": "https://godasya.in/#a2-bilona-cow-ghee",
+          "name": "A2 Bilona Cow Ghee",
+          "description": "Premium A2 Bilona cow ghee hand-churned using the ancient Bilona method from indigenous desi cows. 1 Kg jar packed with pure A2 beta-casein protein for superior digestion and health.",
+          "brand": { "@id": "https://godasya.in/#organization" },
+          "image": "https://godasya.in/og-image.jpg",
+          "sku": "GODASYA-A2B-1KG",
+          "mpn": "A2B-1KG",
+          "category": "Food & Grocery > Dairy & Eggs > Ghee",
+          "offers": {
+            "@type": "Offer",
+            "url": "https://godasya.in/#shop",
+            "priceCurrency": "INR",
+            "price": "1550",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
+            "seller": { "@id": "https://godasya.in/#organization" }
+          }
+        },
+
+        {
+          "@type": "FAQPage",
+          "@id": "https://godasya.in/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is A2 Bilona cow ghee?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A2 Bilona cow ghee is made using the ancient Bilona method — curd from A2 cow milk is hand-churned into butter, which is then slow-cooked into ghee. A2 refers to the A2 beta-casein protein naturally found in traditional Indian desi cow breeds like Gir. It is easier to digest and richer in nutrients compared to standard commercial ghee."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between Pure Cow Ghee and A2 Bilona Cow Ghee?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pure Cow Ghee (Rs 850 per 1 Litre jar) is made from fresh cow milk using the traditional cream method and is excellent for everyday cooking. A2 Bilona Cow Ghee (Rs 1,550 per 1 Kg jar) is crafted using the premium Bilona hand-churning method from A2 milk of indigenous desi cows, offering a deeper flavour profile and higher nutrient density."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does GODASYA ghee contain any preservatives or additives?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. GODASYA ghee contains absolutely zero preservatives, artificial additives, or colouring agents. Every jar is produced in small batches directly on our family farm to ensure you receive the purest, most natural product possible."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I place an order?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Click any Order Now button on our website — it opens WhatsApp with your order details pre-filled. We confirm your order, arrange payment, and dispatch within 1-2 business days."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer monthly subscriptions or bulk orders?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! We offer prepaid monthly subscriptions for 3, 6, or 12 months at progressively discounted rates. We also have a Prepaid Bulk Order option — order 3 or more jars in one go and get a 5% discount automatically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the shelf life of GODASYA ghee and how should I store it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "GODASYA ghee has a shelf life of 12 months when stored correctly. No refrigeration is needed — keep it in a cool, dry place away from direct sunlight. Room temperature preserves its granular texture and rich aroma. Always use a dry spoon to scoop. Once opened, consume within 3-4 months for best flavour."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you deliver pan-India?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, we ship across India. Delivery timelines may vary by location. Contact us on WhatsApp for specific delivery queries or for bulk and corporate orders."
+              }
+            }
+          ]
+        }
+
+      ]
+    }
+    </script>
 </head>
 <body class="font-sans text-brandDark bg-brandCream antialiased selection:bg-brandRed selection:text-brandCream relative">
 
@@ -122,7 +301,7 @@
                 </div>
 
                 <div class="flex-1 flex items-center justify-end space-x-4 lg:space-x-6">
-					<a href="#benefits" class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">Benefits</a>
+                    <a href="#faq"      class="text-brandDark font-semibold uppercase tracking-wider text-sm hover:text-brandRed transition">FAQ</a>
                 </div>
 
             </div>
@@ -563,6 +742,101 @@
     </section>
 
     <!-- Footer -->
+
+    <!-- ═══════════════════════════════════════════════════
+         FAQ SECTION  (id="faq")
+    ════════════════════════════════════════════════════ -->
+    <section id="faq" class="py-20 bg-brandCream border-t border-brandBorder/50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <p class="uppercase tracking-[0.2em] text-xs font-bold text-brandRed mb-3">Got Questions?</p>
+                <h2 class="text-4xl font-serif font-bold text-brandDark mb-4">Frequently Asked Questions</h2>
+                <p class="text-brandDark/70 max-w-xl mx-auto text-sm leading-relaxed">Everything you need to know about our ghee, how it&#8217;s made, and how to order.</p>
+            </div>
+
+            <div class="space-y-2" id="faq-accordion">
+
+                <!-- Q1 -->
+                <div class="faq-item border border-brandBorder rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center gap-4 px-6 py-5 text-left font-semibold text-brandDark hover:text-brandRed transition-colors bg-brandWarm/40 hover:bg-brandWarm/70" aria-expanded="false">
+                        <span class="text-sm sm:text-base">What is A2 Bilona cow ghee?</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-brandRed" style="transition:transform 280ms ease" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-4 text-sm text-brandDark/80 leading-relaxed">
+                        A2 Bilona ghee is made using the ancient Bilona method — curd from A2 cow milk is hand-churned into butter, then slow-cooked into pure ghee. <strong>A2</strong> refers to the A2 beta-casein protein found in traditional Indian desi cow breeds like Gir. It is easier to digest and richer in nutrients than standard commercial ghee.
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item border border-brandBorder rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center gap-4 px-6 py-5 text-left font-semibold text-brandDark hover:text-brandRed transition-colors bg-brandWarm/40 hover:bg-brandWarm/70" aria-expanded="false">
+                        <span class="text-sm sm:text-base">What is the difference between your two ghee products?</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-brandRed" style="transition:transform 280ms ease" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-4 text-sm text-brandDark/80 leading-relaxed">
+                        <strong>Pure Cow Ghee (&#x20B9;850 / 1 Ltr jar)</strong> is made from fresh cow milk using the traditional cream method — perfect for everyday cooking and baking. <strong>A2 Bilona Cow Ghee (&#x20B9;1,550 / 1 Kg jar)</strong> uses the premium Bilona hand-churning process from indigenous desi cow milk, giving it a deeper, nuttier flavour and higher nutrient density.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-item border border-brandBorder rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center gap-4 px-6 py-5 text-left font-semibold text-brandDark hover:text-brandRed transition-colors bg-brandWarm/40 hover:bg-brandWarm/70" aria-expanded="false">
+                        <span class="text-sm sm:text-base">Does GODASYA ghee contain any preservatives or additives?</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-brandRed" style="transition:transform 280ms ease" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-4 text-sm text-brandDark/80 leading-relaxed">
+                        Absolutely not. GODASYA ghee contains <strong>zero preservatives, artificial additives, or colouring agents</strong>. Every jar is produced in small batches directly on our family farm so you receive the purest, most natural product possible.
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-item border border-brandBorder rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center gap-4 px-6 py-5 text-left font-semibold text-brandDark hover:text-brandRed transition-colors bg-brandWarm/40 hover:bg-brandWarm/70" aria-expanded="false">
+                        <span class="text-sm sm:text-base">How do I place an order?</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-brandRed" style="transition:transform 280ms ease" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-4 text-sm text-brandDark/80 leading-relaxed">
+                        Click any <em>Order Now</em> button on the site — it opens WhatsApp with your order details already filled in. We confirm your order, arrange payment, and dispatch within <strong>1–2 business days</strong>. For subscriptions or bulk orders, use the dedicated sections above.
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-item border border-brandBorder rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center gap-4 px-6 py-5 text-left font-semibold text-brandDark hover:text-brandRed transition-colors bg-brandWarm/40 hover:bg-brandWarm/70" aria-expanded="false">
+                        <span class="text-sm sm:text-base">Do you offer monthly subscriptions or bulk order discounts?</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-brandRed" style="transition:transform 280ms ease" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-4 text-sm text-brandDark/80 leading-relaxed">
+                        Yes! We offer <strong>prepaid monthly subscriptions</strong> for 3, 6, or 12 months at progressively better rates so you never run out. We also have a <strong>Prepaid Bulk Order</strong> option — order 3 or more jars in one go and automatically save 5%.
+                    </div>
+                </div>
+
+                <!-- Q6 -->
+                <div class="faq-item border border-brandBorder rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center gap-4 px-6 py-5 text-left font-semibold text-brandDark hover:text-brandRed transition-colors bg-brandWarm/40 hover:bg-brandWarm/70" aria-expanded="false">
+                        <span class="text-sm sm:text-base">What is the shelf life and how should I store the ghee?</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-brandRed" style="transition:transform 280ms ease" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-4 text-sm text-brandDark/80 leading-relaxed">
+                        GODASYA ghee has a shelf life of <strong>12 months</strong> when stored correctly. No refrigeration needed — keep it in a cool, dry place away from direct sunlight. Room temperature preserves its granular texture and rich aroma. Always use a dry spoon. Once opened, finish within <strong>3–4 months</strong> for best flavour.
+                    </div>
+                </div>
+
+                <!-- Q7 -->
+                <div class="faq-item border border-brandBorder rounded-xl overflow-hidden">
+                    <button class="faq-trigger w-full flex justify-between items-center gap-4 px-6 py-5 text-left font-semibold text-brandDark hover:text-brandRed transition-colors bg-brandWarm/40 hover:bg-brandWarm/70" aria-expanded="false">
+                        <span class="text-sm sm:text-base">Do you deliver pan-India?</span>
+                        <svg class="faq-chevron w-5 h-5 flex-shrink-0 text-brandRed" style="transition:transform 280ms ease" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="faq-body hidden bg-white px-6 py-4 text-sm text-brandDark/80 leading-relaxed">
+                        Yes, we ship across India. Delivery timelines vary by location. Reach out on WhatsApp for specific delivery queries or for bulk / corporate orders.
+                    </div>
+                </div>
+
+            </div><!-- /faq-accordion -->
+        </div>
+    </section>
+
     <footer class="bg-brandCream pt-16 pb-8 border-t border-brandBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-[#000000]">
             <div class="grid md:grid-cols-2 gap-12 mb-12">
@@ -589,7 +863,7 @@
                         <ul class="space-y-3">
                             <li><a href="#story" class="text-[#bbbbbb] hover:text-brandRed transition">Our Story</a></li>
                             <li><a href="#benefits" class="text-[#bbbbbb] hover:text-brandRed transition">Ghee Benefits</a></li>
-                            <li><a href="#" class="text-[#bbbbbb] hover:text-brandRed transition">FAQ</a></li>
+                            <li><a href="#faq" class="text-[#bbbbbb] hover:text-brandRed transition">FAQ</a></li>
                         </ul>
                     </div>
                     <div>
@@ -750,6 +1024,29 @@
             renderBulkCard('pcg');
             renderBulkCard('a2b');
         });
+
+        // ── FAQ Accordion ──────────────────────────────────────────────────────
+        (function () {
+            document.querySelectorAll('.faq-trigger').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var body   = this.nextElementSibling;
+                    var chev   = this.querySelector('.faq-chevron');
+                    var isOpen = !body.classList.contains('hidden');
+
+                    // Close all
+                    document.querySelectorAll('.faq-body').forEach(function (b) { b.classList.add('hidden'); });
+                    document.querySelectorAll('.faq-chevron').forEach(function (c) { c.style.transform = 'rotate(0deg)'; });
+                    document.querySelectorAll('.faq-trigger').forEach(function (t) { t.setAttribute('aria-expanded', 'false'); });
+
+                    // Open clicked (if it was closed)
+                    if (!isOpen) {
+                        body.classList.remove('hidden');
+                        chev.style.transform = 'rotate(180deg)';
+                        this.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        })();
         // ── Mobile menu toggle ──────────────────────────────────────────────
         (function () {
             var btn   = document.getElementById('mobile-menu-btn');
